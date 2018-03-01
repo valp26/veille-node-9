@@ -1,3 +1,16 @@
+<%
+	let objOrdre = {
+		"_id":"asc",
+		"nom":"asc",
+		"prenom":"asc",
+		"telephone":"asc",
+		"courriel":"asc"
+	}
+	if(typeof cle!=="undefined" && cle) {
+		objOrdre[cle] = ordre
+	}
+%>
+
 <button id='testAJAX'>test AJAX</button>
 <table class="tableau">
  <tr>

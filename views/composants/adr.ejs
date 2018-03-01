@@ -1,14 +1,1 @@
-<%
-	let objOrdre = {
-		"_id":"asc",
-		"nom":"asc",
-		"prenom":"asc",
-		"telephone":"asc",
-		"courriel":"asc"
-	}
-	if(typeof cle!=="undefined" && cle) {
-		objOrdre[cle] = ordre
-	}
-%>
-
 <%- include('tableau') %> 
