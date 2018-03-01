@@ -8,6 +8,7 @@ app.use(express.static('public'));
 
 /*Configuration de body parser*/
 const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 /* on associe le moteur de vue au module «ejs» */
