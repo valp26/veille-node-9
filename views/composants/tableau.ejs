@@ -40,4 +40,16 @@
 		xhr.send(sData);
 		xhr.addEventListener("readystatechange", traiterRequest, false);
 	})
+
+	// Pour traiter le résultat transmis par l'application serveur 
+	function traiterRequest(e) {
+		console.log("xhr.readyState = " + xhr.readyState)
+		console.log("xhr.status = " + xhr.status)
+		if(xhr.readyState == 4 && xhr.status == 200) {
+			console.log('ajax fonctionne')
+			let  maReponse = JSON.parse(xhr.responseText);
+			console.log(xhr.responseText);
+			console.log(maReponse._id)
+		}
+	}
  </script>
