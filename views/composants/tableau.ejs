@@ -36,8 +36,9 @@
 
  <script>
  	// Notre code JavaScript pour effectuer un transfert AJAX
-	let elmBouton = document.getElementById('testAJAX')
+	/*let elmBouton = document.getElementById('testAJAX')
 	elmBouton.addEventListener('click', ()=>{
+		let elmLigneDiv;
 		console.log('ok')
 		xhr = new XMLHttpRequest();
 		xhr.open('POST', "modifier", true);
@@ -51,7 +52,7 @@
 		xhr.setRequestHeader('Content-type', 'application/json');
 		xhr.send(sData);
 		xhr.addEventListener("readystatechange", traiterRequest, false);
-	})
+	})*/
 
 	// Pour traiter le résultat transmis par l'application serveur 
 	function traiterRequest(e) {
