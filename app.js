@@ -159,8 +159,8 @@ MongoClient.connect('mongodb://127.0.0.1:27017', (err, database) => {
 	})
 })
 
-// Une nouvelle route pour traiter la requête AJAX
-app.post('/ajax_modifier', (req,res) => {
+// Une nouvelle route pour traiter la requête AJAX modifier
+app.post('/ajax_sauver', (req,res) => {
    req.body._id = ObjectID(req.body._id)
 
    db.collection('adresse').save(req.body, (err, result) => {
@@ -169,4 +169,14 @@ app.post('/ajax_modifier', (req,res) => {
    res.send(JSON.stringify(req.body));
    // res.status(204)
    })
+})
+
+// Une nouvelle route pour traiter la requête AJAX modifier
+app.post('/ajax_supprimer', (req, res) => {
+ db.collection('adresse')
+ .findOneAndDelete({"_id": ObjectID(req.body._id)}, (err, resultat) => {
+
+if (err) return console.log(err)
+ res.send(JSON.stringify(resultat))
+ })
 })
