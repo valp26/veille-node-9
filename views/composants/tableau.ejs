@@ -99,9 +99,9 @@ for (elm of elmSupprimer) {
 let elmAjouter = document.querySelectorAll('.ajouter')   
 for (elm of elmAjouter) {
     elm.addEventListener('click', function() {
-        
-        //sauvegarder le tableau dans une variable
-        let tableau = document.querySelectorAll('.tableau')
+
+    	let corpsTableau = document.querySelector('.tableau tbody');
+        let laLigne = document.createElement("TR")
 
         xhr = new XMLHttpRequest();
         xhr.open('POST', "/ajax_ajouter", true);
@@ -119,10 +119,9 @@ for (elm of elmAjouter) {
         xhr.addEventListener("readystatechange", function() {
             let envoi = traiterRequest();
             if(envoi != 0) {
-                let laLigne = document.createElement("TR")
-                let ligneVide = '<td >' + envoi + '</td>' + '<td contenteditable="true"></td>' + '<td contenteditable="true"></td>' + '<td contenteditable="true"></td>' + '<td contenteditable="true"></td>' + '<td><a class="supprimer" href="#"><i class="far fa-trash-alt"><i class="fas fa-trash-alt" aria-hidden="true"></i></a></td>' + '<td><a class='sauver' href="#"><i class="fas fa-save"></i></a></td>'
+                let ligneVide = '<td >' + envoi + '</td>' + '<td contenteditable="true"></td>' + '<td contenteditable="true"></td>' + '<td contenteditable="true"></td>' + '<td contenteditable="true"></td>' + '<td><a class="supprimer" href="#"><i class="far fa-trash-alt"><i class="fas fa-trash-alt" aria-hidden="true"></i></a></td>' + '<td><a class="sauver" href="#"><i class="fas fa-save"></i></a></td>'
                 laLigne.innerHTML = ligneVide
-                tableau.appendChild(laLigne)
+                corpsTableau.appendChild(laLigne);
             }
         }, false);   
     })
