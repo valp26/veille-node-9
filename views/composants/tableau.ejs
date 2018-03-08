@@ -18,7 +18,8 @@
  <th><a href='/trier/prenom/<%=objOrdre.prenom%>'><%= __('Prénom') %></a></th>
  <th><a href='/trier/telephone/<%=objOrdre.telephone%>'><%= __('Téléphone') %></a></th>
  <th><a href='/trier/courriel/<%=objOrdre.courriel%>'><%= __('Courriel') %></a></th>
- <th><i class="far fa-trash-alt"></i></th> 
+ <th><i class="far fa-trash-alt"></i></th>
+ <th><a class="ajouter" href="#" ><i class="fas fa-plus"></i></th>
  </tr>
  <% adresses.forEach(elm => {%>
  <tr>
