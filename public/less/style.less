@@ -20,6 +20,14 @@ html {
 
 		form {
 			margin: 40px;
+			display:flex;
+			align-items: center;
+    		justify-content: center;
+			text-align: center;
+
+			@media screen and (max-width: 850px) {
+				display:inherit;
+    		}
 
 			input {
 				border-radius: 3px;
@@ -35,8 +43,12 @@ html {
 			margin: 0 auto;
 			box-shadow: 3px 5px 5px 5px #888888;
 
+			@media screen and (max-width: 630px) {
+				width: 100%;
+    		}
+
 			th {
-				background: blue;
+				background: navy;
 				border: 1px solid black;
 				color: white;
 				text-decoration:none;
@@ -57,9 +69,19 @@ html {
 		font-size:0.8em;
 		text-align: center;
 		margin-top: 40px;
+		background: navy;
+		color: lightblue;
+		padding: 10px;
+		display:flex;
+		align-items: center;
+    	justify-content: center;
 
 		ul {
 			list-style-type: none;
+
+			a {
+				color:lightblue;
+			}
 		}
 	}
 }
