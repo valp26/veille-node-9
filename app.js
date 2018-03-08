@@ -173,10 +173,9 @@ app.post('/ajax_sauver', (req,res) => {
 
 // Une nouvelle route pour traiter la requête AJAX modifier
 app.post('/ajax_supprimer', (req, res) => {
- db.collection('adresse')
- .findOneAndDelete({"_id": ObjectID(req.body._id)}, (err, resultat) => {
+ db.collection('adresse').findOneAndDelete({"_id": ObjectID(req.body._id)}, (err, resultat) => {
 
 if (err) return console.log(err)
- res.send(JSON.stringify(resultat))
+ res.send(JSON.stringify(req.body))
  })
 })
